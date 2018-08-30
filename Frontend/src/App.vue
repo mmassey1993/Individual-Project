@@ -1,21 +1,11 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img id="qa" src="./assets/QA.jpg">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <li><a href="http://localhost:8080/home " target="_blank" v-on:click="makeActive('home')">Enter</a></li>
     </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    
   </div>
 </template>
 
@@ -24,7 +14,13 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Hello World!!!'
+      msg: 'Welcome to the QA Account Management System'
+    }
+  },
+  methods: {
+    makeActive: function (item) {
+      router.push(item)
+      this.active = item
     }
   }
 }
@@ -56,5 +52,9 @@ li {
 
 a {
   color: #42b983;
+}
+#qa {
+  height:300px;
+  width:300px;
 }
 </style>
