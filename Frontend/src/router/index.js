@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-
+import Home from '../components/Home'
+import GetAllAccounts from '../components/GetAllAccounts'
+import AddAccount from '../components/AddAccount'
 
 Vue.use(Router)
 export default new Router({
@@ -10,6 +11,16 @@ export default new Router({
       path: '',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/getall',
+      name: 'GetAllAccounts',
+      component: GetAllAccounts
+    },
+    {
+      path: '/add',
+      name: 'AddAccount',
+      component: AddAccount
     }
   ]
 })
