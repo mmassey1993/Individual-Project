@@ -66,7 +66,8 @@ export default {
   nav a{
     display:inline-block;
     padding: 18px 30px;
-    color:#fff !important;
+    // color:#fff !important;
+    color:black;
     font-weight:lighter;
     font-size:12px;
     float:left;
