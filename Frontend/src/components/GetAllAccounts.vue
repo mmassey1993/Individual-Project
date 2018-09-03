@@ -2,7 +2,7 @@
     <v-container>
         <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
-                <h4>Show all accounts page</h4>
+                <h3 class="primary--text text-xs-center">List of all accounts</h3>
             </v-flex>
         </v-layout>
         <v-layout>
@@ -13,12 +13,12 @@
                     hide-actions
                 >
                     <template slot="items" slot-scope="props">
-                        <td id="accountID">{{ props.item.id }}</td>
-                        <td>{{ props.item.forename }}</td>
-                        <td>{{ props.item.surname }}</td>
-                        <td>{{ props.item.accountNumber }}</td>
-                        <td><router-link class="nav-link home" to="/edit"><v-icon color="blue" class="glyphicon glyphicon-pencil"></v-icon></router-link></td>
-                        <td><v-btn flat v-on:click="deleteItem(props.item.id)"><v-icon color="red" class="glyphicon glyphicon-remove"></v-icon></v-btn></td>
+                        <td id="accountID" class="text-xs-center">{{ props.item.id }}</td>
+                        <td class="text-xs-center">{{ props.item.forename }}</td>
+                        <td class="text-xs-center">{{ props.item.surname }}</td>
+                        <td class="text-xs-center">{{ props.item.accountNumber }}</td>
+                        <td class="text-xs-center"><router-link fab flat class="nav-link home" :to="{ name: 'EditAccount', params: {id: props.item.id}}"><v-icon color="blue" class="glyphicon glyphicon-pencil"></v-icon></router-link></td>
+                        <td class="text-xs-center"><v-btn depressed flat fab small v-on:click="deleteItem(props.item.id)"><v-icon color="red" class="glyphicon glyphicon-remove"></v-icon></v-btn></td>
                     </template>
                 </v-data-table>
             </v-flex>
@@ -32,7 +32,7 @@ export default {
     name: 'GetAllAccounts',
     data () {
         return {
-            id: [],
+            // id: [],
             headers: [
                 {
                     text: 'Account id',
@@ -83,13 +83,6 @@ export default {
         .catch(e => {
             this.errors.push(e)
         })
-    },
-    computed: {
-      table() {
-        return {
-          id: document.getElementById('accountID').value
-        }
-      }
     },
     methods: {
         deleteItem(id) {

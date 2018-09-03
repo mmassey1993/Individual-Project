@@ -2,7 +2,7 @@
     <v-container>
         <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
-                <h4 class="primary--text">Add Account page</h4>
+                <h2 class="primary--text text-xs-center">Add a new account</h2>
             </v-flex>
         </v-layout>
             <v-flex xs12 sm6 offset-sm3>
@@ -13,6 +13,7 @@
                             ref="forename"
                             :rules="[rules.name]"
                             v-model="forename"
+                            autofocus
                             required>
                         </v-text-field>
                         <v-text-field
@@ -25,7 +26,7 @@
                         <v-text-field
                             label="Account Number"
                             ref="accountNumber"
-                            v-model.number="accountNumber"
+                            v-model="accountNumber"
                             type="number"
                             :rules="[rules.account]"
                             required>
@@ -40,7 +41,7 @@
                             left>
                             </v-tooltip>
                         </v-slide-x-reverse-transition>
-                        <v-btn class="addbutton" color="#005baa" dark v-on:click="submit">Add Account</v-btn>
+                        <v-btn class="addbutton text-xs-center" color="#005baa" dark v-on:click="submit">Add Account</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
@@ -86,7 +87,8 @@ export default {
                 axios.post('http://localhost:8081/accounts/add', obj)
                 .then(function (response) {
                     console.log(response.data)
-                    return "The account has been added!"
+                    window.alert("The account has been added.")
+                    window.location.href='http://localhost:8080/#/'
                 })
                 .catch(function (error){
                     console.log(error)
@@ -101,9 +103,8 @@ export default {
 
 <style>
 .addbutton {
-    text-color: white;
     position: relative;
-    margin: 0 auto;
+    right: 200px;
 }
 
 </style>

@@ -40,37 +40,31 @@ export default {
     width: auto;
     float: left;
   }
-  #cont {
-    min-height: 100vh;
-    position: relative;
-  }
 
-  body{
-    font:15px/1.3 'Open Sans', sans-serif;
-    color: #000000;
-    text-align:center;    
-  }
-  
   /*-------------------------
       The menu
   --------------------------*/
   nav{
     display:inline-block;
-    // position:relative;
-    // float: bottom;
+    position:relative;
     background-color: #005baa;
-    border-radius:0px;
     width: 100%;
-    z-index: 1;
+    height:50px;
+    color: white;
   }
-  nav a{
+  .nav-link {
+    display: inline;
+    color:white;
+  }
+
+  .nav-link:hover {
+    color:white;
+  }
+  nav router-link{
     display:inline-block;
     padding: 18px 30px;
-    // color:#fff !important;
-    color:black;
     font-weight:lighter;
     font-size:12px;
-    float:left;
     text-decoration:none !important;
     line-height:1;
     text-transform: uppercase;
@@ -86,7 +80,7 @@ export default {
     color:#7d9098;
   }
   p b{
-    color:#ffffff;
+    color:white;
     display:inline-block;
     padding:5px 10px;
     background-color:#c4d7e0;
@@ -94,10 +88,6 @@ export default {
     text-transform:uppercase;
     font-size:18px;
   }
-  #topBanner {
-    width: 100%;
-    height: 110px;
-    background: black;
-  }
+
 
 </style>
