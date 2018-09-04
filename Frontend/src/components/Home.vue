@@ -33,13 +33,8 @@
 </template>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel'
 export default {
-    name: 'Home',
-    components: {
-        Carousel,
-        Slide
-    }
+    name: 'Home'
 }
 </script>
 
