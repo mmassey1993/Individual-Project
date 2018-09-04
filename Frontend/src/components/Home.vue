@@ -17,35 +17,29 @@
                 </p>
             </v-flex>
         </v-layout>
-        <!-- <v-layout row wrap>
-            <v-flex xs12>
-                <v-carousel>
-                    <v-carousel-item
-                    v-for="image in images"
-                    :src="image.src"
-                    :key="image.id">
-                    </v-carousel-item>
-                </v-carousel>
+        <v-layout row>
+            <v-flex xs12 sm6 offset-sm3 >
+                <carousel :perPageCustom="[[768, 1], [1024, 1]]" :autoplay="true" :unagile="true" :autoplayTimeout="3000" autoplayHoverPause=true :loop="true" paginationActiveColor="#005caa">
+                    <slide>
+                        <img src="../assets/GetAll.jpg"/>
+                    </slide>
+                    <slide>
+                        <img src="../assets/Add.jpg"/>
+                    </slide>
+                </carousel>
             </v-flex>
-        </v-layout> -->
+        </v-layout>
     </v-container>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel'
 export default {
     name: 'Home',
-    // data () {
-    //     return {
-    //         images: [
-    //             {
-    //                 id: '1', src: '../assets/GetAll.jpg', title:'Get All Page'
-    //             },
-    //             {
-    //                 id: '2', src: '../assets/Add.jpg', title: 'Add Account Page'
-    //             }
-    //         ]
-    //     }
-    // }
+    components: {
+        Carousel,
+        Slide
+    }
 }
 </script>
 
@@ -54,6 +48,11 @@ export default {
     color: blue;
     font-size: 20px;
     text-align: center;
+}
+
+img {
+  height: 300px;
+  width: 100%;
 }
 
 </style>
