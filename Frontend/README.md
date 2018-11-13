@@ -1,3 +1,5 @@
+# To start front end, use 'npm run dev' in command prompt
+
 # codemix-vanilla-react
 
 Template for project creation of Vue inside CodeMix
