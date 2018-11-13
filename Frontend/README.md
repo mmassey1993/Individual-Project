@@ -1,4 +1,4 @@
-# To start front end, use 'npm run dev' in command prompt
+#### To start front end, use 'npm run dev' in command prompt
 
 # codemix-vanilla-react
 
